@@ -5,7 +5,7 @@
 #include <string>
 #include <stdio.h>
 
-int main()
+int main_security()
 {
 	std::string str = "hello";
 	char md5[64] = { 0 };

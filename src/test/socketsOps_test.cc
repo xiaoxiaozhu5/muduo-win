@@ -1,5 +1,6 @@
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
 #include <winsock2.h>
+#include <windows.h>
 
 #pragma comment(lib, "ws2_32.lib")
 #include "logging.h"
@@ -20,7 +21,7 @@ int main914()
 	//Init Windows Socket
 	 if (WSAStartup(MAKEWORD(2, 2), &Ws) != 0)
 	 {
-		 cout << "Init Windows Socket Failed::" << GetLastError() << endl;
+		LOG_ERROR << "Init Windows Socket Failed::" << GetLastError();
 		 return -1;
 	 }
 	struct sockaddr_in addr;
